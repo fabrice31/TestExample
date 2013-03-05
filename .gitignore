@@ -1,4 +1,4 @@
 *.gem
 rdoc
 doc/
-/nbproject/private/
+/nbproject/
