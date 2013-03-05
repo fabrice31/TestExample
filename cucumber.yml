@@ -1,0 +1,17 @@
+<% common = "-r config -r support -r features -r step_definitions --tags ~@wip --color --format pretty --format html -o results.html --format junit -o junit" %>
+<% mini = "-r config -r support -r features -r step_definitions --tags ~@wip" %>
+
+# default : firefox
+default: <%= common %> LANG=EN BROWSER=firefox
+
+# other browser
+ie: <%= common %> BROWSER=ie
+ff: <%= common %> BROWSER=firefox
+chrome: <%= common %> BROWSER=chrome
+mobile: <%= common %> BROWSER=mobile
+
+# other language
+french: LANG=FR
+
+# stats of scenarios
+usage: <%= mini %>  --format usage BROWSER=firefox
